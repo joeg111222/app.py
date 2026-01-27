@@ -77,4 +77,4 @@ def compute_returns(df: pd.DataFrame) -> pd.DataFrame:
 def port_rets(rets: pd.DataFrame, w_spy: float, w_btc: float) -> pd.Series:
     return w_spy * rets["SPY Close"] + w_btc * rets["BTC Close"]
 
-def a
+def a(
