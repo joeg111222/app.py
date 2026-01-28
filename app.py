@@ -7,6 +7,32 @@ import plotly.express as px
 
 st.set_page_config(page_title="BTC Diversification Dashboard", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    html, body, [class*="css"]  {
+        font-family: "JetBrains Mono", monospace;
+    }
+
+    .stMetric {
+        background: linear-gradient(135deg, #0B1020, #070A12);
+        border: 1px solid rgba(0, 245, 255, 0.2);
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 245, 255, 0.08);
+    }
+
+    .stPlotlyChart {
+        background-color: #070A12;
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 @st.cache_data(ttl=60 * 60)
 def fetch_csv(url: str) -> pd.DataFrame:
     r = requests.get(url, timeout=30)
